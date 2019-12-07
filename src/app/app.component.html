@@ -1,0 +1,22 @@
+<div class="container">
+  <mat-form-field>
+    <mat-label>teste</mat-label>
+    <input matInput type="number" [(ngModel)]="input1" name="1" />
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>teste</mat-label>
+    <input matInput type="number" [(ngModel)]="input2" name="2" />
+  </mat-form-field>
+  <br>
+  <button mat-button (click)="calc()">calcular</button>
+  <br>
+  <button mat-button (click)="find()">find</button>
+  <br>
+  <br>
+  <br>
+  <mat-form-field>
+    <mat-label>teste</mat-label>
+    <textarea matInput class="textarea" [(ngModel)]="resultado"></textarea>
+  </mat-form-field>
+</div>
