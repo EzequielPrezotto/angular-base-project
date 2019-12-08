@@ -1,14 +1,16 @@
 <h1>{{title}}</h1>
 <br>
-<button (click)="find()">find</button>
-<br>
-<textarea class="textarea" [value]="resultado"></textarea>
 
-<!-- <div class="container">
-  <button mat-button (click)="find()">find</button>
+ <div class="container">
+  <button mat-button (click)="count()">count</button>
   <br>
   <mat-form-field>
-    <mat-label>teste</mat-label>
-    <textarea matInput class="textarea" [(ngModel)]="resultado"></textarea>
+    <mat-label>input</mat-label>
+    <textarea matInput class="textarea" [(ngModel)]="input"></textarea>
   </mat-form-field>
-</div> -->
+  <br>
+  <mat-form-field>
+    <mat-label>result</mat-label>
+    <textarea matInput class="textarea" [(ngModel)]="result"></textarea>
+  </mat-form-field>
+</div> 

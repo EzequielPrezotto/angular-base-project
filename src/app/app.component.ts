@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 
+export class Counter {
+  word: string;
+  amount: number;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,39 +12,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-base-project';
-  input1 = '';
-  input2 = '';
-  resultado = '';
+  input = '';
+  result = '';
 
-  find() {
-    const teste = 'hoje eu vou para casa para comer algo';
-    let palavrasEncontradas = [];
-    let quantidade = [];
+  count() {
+    this.result = this.countWords(this.input);
+  }
 
-    let quantidadePalavra = [];
+  countWords(phrase: string, word = true): string {
+    let count: Array<Counter> = [];
+    const words = phrase.split(word ? ' ' : '');
 
-    const palavras = teste.split(' ');
-
-    palavras.forEach(palavra => {
-      const index = palavrasEncontradas.findIndex(value => value === palavra);
+    words.forEach(word => {
+      const index = count.findIndex(value => value.word === word);
       if (index > -1) {
-        quantidade[index]++;
-        quantidadePalavra[index].quantidade++;
+        count[index].amount++;
       } else {
-        palavrasEncontradas.push(palavra);
-        quantidade.push(1);
-        quantidadePalavra.push({ palavra: palavra, quantidade: 1 });
+        count.push({ word: word, amount: 1 });
       }
     });
-
-    let resultado = '';
-
-    palavrasEncontradas.forEach((value, index) => {
-      resultado += value + ': ' + quantidade[index] + '\r\n';
-    });
-
-    //document.getElementById('resultado').value = resultado;
-    this.resultado = JSON.stringify(quantidadePalavra);
-
+    return JSON.stringify(count);
   }
 }
