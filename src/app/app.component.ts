@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'teste-angular';
+  title = 'angular-base-project';
   input1 = '';
   input2 = '';
   resultado = '';
