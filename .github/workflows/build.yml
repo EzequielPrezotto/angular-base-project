@@ -9,17 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [10.16.3]
 
     steps:
       - uses: actions/checkout@v1
 
-      - name: Node $
+      - name: Node 10.16.3
         uses: actions/setup-node@v1
         with:
-          node-version: $
+          node-version: 10.16.3
 
-      - name: npm install and npm run build
+      - name: install and build
         run: |
-          npm ci
-          npm run build:ci 
+          npm install -g @angular/cli
+          npm install
+          ng build --prod
