@@ -11,10 +11,6 @@ export class AppComponent {
   input2 = '';
   resultado = '';
 
-  calc() {
-    alert(Number(this.input1) + Number(this.input2));
-  }
-
   find() {
     const teste = 'hoje eu vou para casa para comer algo';
     let palavrasEncontradas = [];
